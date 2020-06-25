@@ -1,0 +1,40 @@
+/* Generali */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+span:hover {
+  cursor: pointer;
+}
+
+.block {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
+}
+
+.box {
+  position: relative;
+  width: calc(100% / 6);
+  height: calc(100% / 6);
+  border: 1px solid black;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+}
+/* fine generali */
