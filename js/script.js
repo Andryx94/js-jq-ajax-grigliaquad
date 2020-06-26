@@ -11,25 +11,27 @@ $(document).ready(
       var selected = $(this);
 
       //avvio chiamata ajax su API Boolean
-      $.ajax(
-        {
-          url: "https://flynn.boolean.careers/exercises/api/random/int",
-          method: "GET",
-          success: function (data, stato) {
-            selected.children().html(data.response);
+      if (!selected.hasClass("click")){
+        $.ajax(
+          {
+            url: "https://flynn.boolean.careers/exercises/api/random/int",
+            method: "GET",
+            success: function (data) {
+              selected.children().html(data.response);
 
-            if (data.response <= 5) {
-              selected.addClass("yellow");
+              if (data.response <= 5) {
+                selected.addClass("yellow click");
+              }
+              else {
+                selected.addClass("green click");
+              }
+            },
+            error: function (richiesta, stato, errore) {
+              alert("E' avvenuto un errore. " + errore);
             }
-            else {
-              selected.addClass("green");
-            }
-          },
-          error: function (richiesta, stato, errori) {
-            alert("E' avvenuto un errore. " + errore);
           }
-        }
-      );
+        );
+      }
     });
   }
 );
